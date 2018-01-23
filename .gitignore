@@ -1,0 +1,8 @@
+.DS_Store
+*.aux
+*.d
+*.dvi
+*.fls
+*.log
+*.synctex.gz
+namecard.pdf

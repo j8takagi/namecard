@@ -1,0 +1,54 @@
+\documentclass[12pt]{jarticle}
+
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{okumacro}
+\usepackage[dvipdfmx]{pict2e}
+\usepackage{url}
+%% \renewcommand{\kanjifamilydefault}{\gtdefault} % ゴシック体にする
+\renewcommand{\rmdefault}{lmss}
+
+\pagestyle{empty}
+
+% 名刺マルチカード エーワン株式会社 品番「51865」にあわせた設定
+% 参照: http://www.a-one.co.jp/product/search/detail.php?id=51865
+\setlength{\hoffset}{-1truein}  % 左マージン外を0に
+\setlength{\voffset}{-1truein}  % 上マージン外を0に
+\addtolength{\hoffset}{-4truemm} % 実測値を元に調整
+\setlength{\oddsidemargin}{14truemm} % 名刺マルチカードの左マージンにあわせる
+\setlength{\topmargin}{11truemm} % 名刺マルチカードの上マージンにあわせる
+\setlength{\textwidth}{182truemm} % 名刺マルチカードの幅
+\setlength{\textheight}{275truemm} % 名刺マルチカードの高さ
+\setlength{\headheight}{0truemm}
+\setlength{\headsep}{0truemm}
+\setlength{\marginparsep}{0truemm}
+\setlength{\marginparwidth}{0truemm}
+\setlength{\footskip}{0truemm}
+\setlength{\marginparpush}{0truemm}
+
+\begin{document}
+\setlength{\unitlength}{1truemm}
+\begin{picture}(182,275)(0,0)
+  %% \put(0,0){\dashbox{1.0}(182, 275){}} % 描画領域全体の枠線
+  \multiput(0,0)(0,55){5}{%
+    \multiput(0,0)(91,0){2}{%
+      %% ここから中身 %%%%%%%%%%%%
+      \begin{picture}(91,55)(0,0)
+        %% \put(0,0){\dashbox{1.0}(91, 55){}} % 片ごとの枠線
+        %% \put(5,10){\dashbox{4.0}(80, 40){}} % テキスト位置の枠線
+        \put(5,40){\large \ruby{織}{お}\ruby{田}{だ} \ruby{信}{のぶ}\ruby{長}{なが}} %氏名
+        \put(30,40){\small Nobunaga Oda} %name
+
+        \put(5,30){\small Email:}
+        \put(20,30){\small {\texttt nobunaga.oda@example.com}} % e-mail
+        \put(5,25){\small URL:}
+        \put(20,25){\small \url{http://www.example.com/}} % URL
+        \put(5,20){\small TEL:}
+        \put(20,20){\small 000-0000-0000} % TEL
+        \put(5,15){\small 住所:}
+        \put(20,15){\footnotesize 〒521-1311 滋賀県近江八幡市安土町下豊浦} % 住所
+
+        \put(5,10){\scriptsize \dag この名刺は\LaTeX で作成しました。}
+      \end{picture}
+  }}
+\end{picture}
+\end{document}
